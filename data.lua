@@ -12,7 +12,7 @@ spiderdrone_item.icon_tintable = "__spiderdrone__/graphics/spiderdrone-tintable.
 spiderdrone_item.icon_tintable_mask = "__spiderdrone__/graphics/spiderdrone-tintable-mask.png"
 spiderdrone_item.icon_size = 64
 spiderdrone_item.icon_mipmaps = 4
-spiderdrone_item.weight = 0.25 * tons,
+spiderdrone_item.weight = 250,
 data:extend{spiderdrone_item}
 
 --equipment grid
@@ -27,14 +27,14 @@ data:extend{spiderdrone_equipment_grid}
 local spiderdrone_entity = table.deepcopy(data.raw["spider-vehicle"]["spidertron"])
 spiderdrone_entity.name = "spiderdrone"
 spiderdrone_entity.type = "spider-vehicle"
-spiderdrone_entity.localised_name = {"Spiderdrone"}
+spiderdrone_entity.localised_name = {"entity-name.spiderdrone"}
 spiderdrone_entity.icon = "__spiderdrone__/graphics/drone-icon.png"
 spiderdrone_entity.equipment_grid = "spiderdrone-equipment-grid"
 spiderdrone_entity.inventory_size = 20
 spiderdrone_entity.collision_box = {{-1 * scale, -1 * scale}, {1 * scale, 1 * scale}}
 spiderdrone_entity.selection_box = {{-1 * scale, -1 * scale}, {1 * scale, 1 * scale}}
 spiderdrone_entity.drawing_box = {{-3 * scale, -4 * scale}, {3 * scale, 2 * scale}}
-spiderdrone_entity.icon_size = 64
+spiderdrone_entity.icon_size = 200
 spiderdrone_entity.mined_sound = {filename = "__core__/sound/deconstruct-large.ogg", volume = 0.8}
 spiderdrone_entity.open_sound = {filename = "__base__/sound/spidertron/spidertron-door-open.ogg", volume = 0.35}
 spiderdrone_entity.close_sound = {filename = "__base__/sound/spidertron/spidertron-door-close.ogg", volume = 0.4}
@@ -73,7 +73,7 @@ spiderdrone_entity.minable = {
 }
 --spiderdrone_entity.mining_time = 0.25
 spiderdrone_entity.priority = 50
-spiderdrone_entity.max_health = 1500
+spiderdrone_entity.max_health = 800
 spiderdrone_entity.resistances =
 {
   {
@@ -115,7 +115,7 @@ spiderdrone_entity.resistances =
 spiderdrone_entity.energy_per_hit_point = 1
 spiderdrone_entity.guns = {"spiderdrone-machine-gun-1", "spiderdrone-machine-gun-2"}
 spiderdrone_entity.equipment_grid = "spiderdrone-equipment-grid"
-spiderdrone_entity.trash_inventory_size = 0
+spiderdrone_entity.trash_inventory_size = 10
 spiderdrone_entity.height = 2
 spiderdrone_entity.torso_rotation_speed = 0.05
 spiderdrone_entity.chunk_exploration_radius = 3
@@ -143,17 +143,11 @@ spiderdrone_entity.spider_engine =
       walking_group = 1
     }
   },
-  legs_movement_acceleration = 10,  -- Adjust this value
-  legs_movement_force = 10,  -- Adjust this value
-  walking_speed_modifier = 10,  -- 50% speed increase 
+  legs_movement_acceleration = 10, 
+  legs_movement_force = 10, 
+  walking_speed_modifier = 10,
   military_target = "spidertron-military-target"
 }
---[[
-spiderdrone_entity.spider_engine = spiderdrone_entity.spider_engine or {}
-spiderdrone_entity.spider_engine.legs_movement_acceleration = 10  -- Adjust this value
-spiderdrone_entity.spider_engine.legs_movement_force = 10  -- Adjust this value
-spiderdrone_entity.spider_engine.walking_speed_modifier = 10  -- 50% speed increase 
-]]
 spiderdrone_entity.minimap_representation =
 {
   filename = "__spiderdrone__/graphics/drone-map.png",

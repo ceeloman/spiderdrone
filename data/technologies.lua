@@ -10,7 +10,7 @@ local spiderdrone_recipe = {
     {type = "item", name = "low-density-structure", amount = 50},
     {type = "item", name = "processing-unit", amount = 50},
     {type = "item", name = "flying-robot-frame", amount = 1},
-    {type = "item", name = "fusion-reactor-equipment", amount = 1},
+    {type = "item", name = "fission-reactor-equipment", amount = 1},
   },
   results = {
     {type = "item", name = "spiderdrone", amount = 1}
@@ -40,7 +40,7 @@ local spiderdrone_technology = {
     return prereqs
   end)(),
   unit = {
-    count = 1000,
+    count = 500,
     ingredients =
     {
       {"automation-science-pack", 1},
