@@ -1,0 +1,1 @@
+if mods["quality"] then require("__quality__.data-updates") end
